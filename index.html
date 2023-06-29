@@ -6,6 +6,7 @@
         <title>Perfect Pizza</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="index.js" refer></script>
         <!-- <link rel="stylesheet" href="style.css"> -->
 
         <!-- Font Awesome -->
@@ -100,27 +101,15 @@
 
                         <div x-data="{ show: false}">
 
-                            <div x-data="{ countdown: 5 }"
-                                x-init="setInterval(function(){
-                                            countdown--;
-                                        }, 1000);
-                                        ">
-                                    
-                                        <div  x-if="countdown > 0">
-                                            
-                                            <p x-text="check_message=''"></p>
-                                            <h3 x-text="message"></h3> 
-                                            <!-- <h1 x-text="countdown"></h1> -->
-                                        </div>
-
-                                        <p class="alert alert-dismissible" x-text="check_message"></p>
-                                        <h3 x-text="message"></h3> 
-                                
-                            </div>
+                          
+                                    <p class="alert-danger " x-text="check_message"></p>
+                                    <h3 x-text="message"></h3> 
+                            
+                        </div>
 
                             
 
-                            <button class="btn btn-warning btn-lg" @click="if(total > 0){show=!show; check_message=''} else{check_message='Your Cart is empty...Add some pizzas'}">Checkout</button>
+                            <button x-show="total > 0" class="btn btn-warning btn-lg" @click="if(total > 0){show=!show; check_message=''} else{check_message='Your Cart is empty...Add some pizzas'}">Checkout</button>
 
                             <div class="" x-show="show">
 
@@ -128,7 +117,7 @@
                                     <label for="amount">Payment Amount</label>
                                     <input id="amount" type="number" placeholder="Enter amount" x-model="amount" />
 
-                                    <button class="btn btn-success" @click="if(amount >= total){ message='Enjoy your pizza'; total=0; lcount=0; scount=0; mcount=0, amount=0, show=false } else{message='Sorry - that is not enough money!'} " type="button">Pay</button>
+                                    <button class="btn btn-success" @click="if(amount >= total){ message='Enjoy your pizza'; total=0; lcount=0; scount=0; mcount=0, amount=0, show=false , setTimeout(function(){ message=''; }, 3000);} else{message='Sorry - that is not enough money!'; setTimeout(function(){ message=''; }, 3000); } " type="button">Pay</button>
                                 </form>
                             </div>
                         </div>
