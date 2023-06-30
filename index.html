@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Perfect Pizza</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="index.js" refer></script>
-        <link rel="stylesheet" href="style.css">
 
-        <!-- Font Awesome -->
-        <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-        />
-        <!-- Google Fonts -->
-        <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        rel="stylesheet"
-        />
-        <!-- MDB -->
-        <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
-        rel="stylesheet"
-        />
-    </head>
-    <body>
-        <section class="main"
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Perfect Pizza</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="index.js" refer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="main"
         x-data="{total: 0.00, scount: 0, mcount: 0, lcount: 0, cart_count: 0, message: '', amount: 0, show: false, open: false}">
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
@@ -48,7 +41,7 @@
                 <!-- Collapsible wrapper -->
                 <div class="" id="navbarSupportedContent">
                     <!-- Navbar brand -->
-                    <a class="navbar-brand mt-2 mt-lg-0" href="/index.html"> PERFECT PIZZA
+                    <a class="navbar-brand mt-2 mt-lg-0" href="/"> PERFECT PIZZA
                     </a>
 
                 </div>
@@ -75,10 +68,10 @@
 
             <div class="header-div">
                 <h1>PERFECT PIZZA</h1>
-                <hr /> 
+                <hr />
             </div>
             <div class="text-center" x-data="{ show: false}">
-                <template x-if="message== 'Enjoy your pizza'">
+                <template x-if="message== 'Thank you, Enjoy your pizza'">
                     <h6 class="alert alert-success" x-text="message"></h6>
                 </template>
 
@@ -95,25 +88,25 @@
                 <h3 class="fas fa-cart-shopping">Shopping Cart</h3>
                 <h3 class="fas fa-cart-shopping"> </h3>
 
-                <div  x-show="scount > 0">
+                <div x-show="scount > 0">
                     <span>Small Pizza </span><span class="badge rounded-pill badge-danger" x-text="scount"></span><br>
-                    <button class="badge badge-dark" @click="(check_message='');(total+=13.00);(scount++)">+</button>
-                    <button class="badge badge-dark" @click="if(scount >0 ){total-=13.00;scount--;}">-</button>
-                    <span>R13.00</span><br>
+                    <button class="badge badge-dark" @click="(check_message='');(total+=35.00);(scount++)">+</button>
+                    <button class="badge badge-dark" @click="if(scount >0 ){total-=35.00;scount--;}">-</button>
+                    <span>R35.00</span><br>
                 </div>
 
                 <div x-show="mcount > 0">
                     <span>Medium</span><span class="badge rounded-pill badge-danger" x-text="mcount"></span><br>
-                    <button class="badge badge-dark" @click="(check_message='');(total+=18.99); (mcount++) ">+</button>
-                    <button class="badge badge-dark" @click="if(mcount >0){total-=18.99;mcount--;}">-</button>
-                    <span>R18.99</span><br>
+                    <button class="badge badge-dark" @click="(check_message='');(total+=55); (mcount++) ">+</button>
+                    <button class="badge badge-dark" @click="if(mcount >0){total-=55;mcount--;}">-</button>
+                    <span>R55</span><br>
                 </div>
 
                 <div x-show="lcount > 0">
                     <span>Large</span><span class="badge rounded-pill badge-danger" x-text="lcount"></span><br>
-                    <button class="badge badge-dark" @click="(check_message=''),(total+=24.99),(lcount++)">+</button>
-                    <button class="badge badge-dark" @click="if(lcount >0){total-=24.99;lcount--;}">-</button>
-                    <span>R24.99</span><br>
+                    <button class="badge badge-dark" @click="(check_message=''),(total+=95),(lcount++)">+</button>
+                    <button class="badge badge-dark" @click="if(lcount >0){total-=95;lcount--;}">-</button>
+                    <span>R95</span><br>
                 </div>
 
                 <br>
@@ -135,7 +128,7 @@
                             <input id="amount" type="number" placeholder="Enter amount" x-model="amount" />
 
                             <button class="btn btn-success"
-                                @click="if(amount >= total){ message='Enjoy your pizza'; total=0; lcount=0; scount=0; mcount=0, amount=0, show=false , setTimeout(function(){ message=''; }, 3000);} else{message='Sorry - that is not enough money!'; setTimeout(function(){ message=''; }, 3000); } "
+                                @click="if(amount >= total){ message='Thank you, Enjoy your pizza'; total=0; lcount=0; scount=0; mcount=0, amount=0, show=false , setTimeout(function(){ message=''; }, 3000);} else{message='Sorry - that is not enough money!'; setTimeout(function(){ message=''; }, 3000); } "
                                 type="button">Pay</button>
                         </form>
                     </div>
@@ -158,18 +151,18 @@
                         </div>
                         <div class="card-body sec-1">
                             <h2 class="card-title">Small Pizza</h2>
-                            <h3>R13.00</h3>
+                            <h3>R35.00</h3>
                             <p class="card-text">Small pizza with 2 toppings
                                 1 meat topping.
                                 3 or less other toppings.</p>
                             <br>
                             <div class="d-grid gap-2" x-show="">
-                                <a href="#!" class="btn btn-primary" @click="(total+=13.00),(scount++)"
+                                <a href="#!" class="btn btn-primary" @click="(total+=35.00),(scount++)"
                                     x-show="scount < 1">Add to cart</a>
                                 <div x-show="scount > 0">
                                     <a href="#!" class="btn btn-success" @click="open=!open" x-show="scount > 0">View
                                         Cart</a>
-                                    <a href="#!" class="btn btn-warning" @click="(total-=13.00),(scount--)"
+                                    <a href="#!" class="btn btn-warning" @click="(total-=35.00),(scount--)"
                                         x-show="scount > 0">Cancel Order</a>
                                 </div>
                             </div>
@@ -189,18 +182,18 @@
                         </div>
                         <div class="card-body sec-2">
                             <h2 class="card-title">Medium Pizza</h2>
-                            <h3>R18.99</h3>
+                            <h3>R55</h3>
                             <p class="card-text">Medium margerith pizza with 3 topping max 2 or less meat topping 3 or
                                 less other toppings</p>
 
                             <div class="d-grid gap-2">
-                                <a class="btn btn-primary" @click="(total+=18.99) (mcount++)" x-show="mcount < 1">Add to
+                                <a class="btn btn-primary" @click="(total+=55) (mcount++)" x-show="mcount < 1">Add to
                                     cart</a>
 
                                 <div x-show="mcount > 0">
                                     <a href="#!" class="btn btn-success" @click="open=!open" x-show="mcount > 0">View
                                         Cart</a>
-                                    <a href="#!" class="btn btn-warning" @click="(total-=18.99),(mcount--)"
+                                    <a href="#!" class="btn btn-warning" @click="(total-=55),(mcount--)"
                                         x-show="mcount > 0">Cancel Order</a>
                                 </div>
                             </div>
@@ -219,19 +212,19 @@
                         </div>
                         <div class="card-body sec-3">
                             <h2 class="card-title">Large Pizza</h2>
-                            <h3>R24.99</h3>
+                            <h3>R95</h3>
                             <p class="card-text">
                                 Large margeritha pizza with 3 toppings max
                                 3 meat topping max
-                                3 or lessother toppings</p>
+                                3 or less other toppings</p>
 
                             <div class="d-grid gap-2">
-                                <a class="btn btn-primary" @click="(total+=24.99),(lcount++)" x-show="lcount < 1">Add to
+                                <a class="btn btn-primary" @click="(total+=95),(lcount++)" x-show="lcount < 1">Add to
                                     cart</a>
                                 <div x-show="lcount > 0">
                                     <a href="#!" class="btn btn-success" @click="open=!open" x-show="lcount > 0">View
                                         Cart</a>
-                                    <a href="#!" class="btn btn-warning" @click="(total-=24.99),(lcount--)"
+                                    <a href="#!" class="btn btn-warning" @click="(total-=95),(lcount--)"
                                         x-show="lcount > 0">Cancel Order</a>
                                 </div>
                             </div>
@@ -248,11 +241,11 @@
     </section>
 
 
-        <footer class="bg-dark text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-              <!-- Section: Social media -->
-              <section class="mb-4">
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
                 <!-- Facebook -->
 
                 <section class="row">
@@ -270,50 +263,45 @@
                     </div>
                     <hr>
                 </section>
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-          
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
                 <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-          
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
                 <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                  ><i class="fab fa-google"></i
-                ></a>
-          
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
                 <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-          
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
                 <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-          
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                  ><i class="fab fa-github"></i
-                ></a>
-              </section>
-              <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-          
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2020 Copyright:
-              <a class="text-white">Perfect Pizza</a>
-            </div>
-            <!-- Copyright -->
-          </footer>
-        <script src="" async defer></script>
-        
-        <!-- MDB -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    </body>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white">Perfect Pizza</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="" async defer></script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
 </html>

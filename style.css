@@ -7,7 +7,7 @@ body{
 }
 
 .main{
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .header-div{
@@ -22,17 +22,17 @@ body{
 
 /* styling each section */
 .sec-1{
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(120,0,0,0.3))
 }
 
 .sec-2{
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     background-image: linear-gradient(to right, rgba(120,0,0,0.3), rgba(190,0,0,0.7))
 }
 
 .sec-3{
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     background-image: linear-gradient(to right, rgba(190,0,0,0.7), rgba(255,0,0,1))
 }
 /* end of section styling */
